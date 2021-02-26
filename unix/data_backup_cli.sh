@@ -18,7 +18,8 @@ sleep $waitTime
 for dir in $sourceDir/*/ 
 do
     # Remove the trailing "/" so that the source subdir structure will be kept.
-    dir=${dir%*/}     echo "Copying '$dir' to $destDir"
+    dir=${dir%*/}
+    echo "Copying '$dir' to $destDir"
     # TODO: add logging option to make it consistent with Windows version
     # TODO: look into multi-thread support
     rsync -av --delete "$dir" "$destDir"
