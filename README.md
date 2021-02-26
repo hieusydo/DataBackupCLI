@@ -8,7 +8,7 @@ Simple utilities to backup data. *Why did I do this?* I couldn't find a suitable
 
 ## Components
 The scripts are essentially calling these programs behind the scene:
-- [robocopy](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/?view=powershell-7.1)
+- [robocopy](https://docs.microsoft.com/en-us/windows-server/administration/windows-commands/robocopy)
 - [rsync](https://www.man7.org/linux/man-pages/man1/rsync.1.html)
 
 ## Future Works
