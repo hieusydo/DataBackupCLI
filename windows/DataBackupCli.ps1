@@ -1,6 +1,7 @@
 # Author: Hieu Do (hieusydo@gmail.com)
 # Date: Feb 2021
 
+# TODO: replace
 $SourceRoot = "D:\"
 $DestRoot = "R:\REPLICA_1\"
 $SubSourceDir = Get-ChildItem -Path $SourceRoot -Directory

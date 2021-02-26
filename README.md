@@ -2,7 +2,7 @@
 Simple utilities to backup data. *Why did I do this?* I couldn't find a suitable alternative: SyncToy for Win was outdated and gave weird behaviors on Windows 10; Carbon Copy Cloner for Mac was expensive for my simple use case (it's a very nice piece of software tho). 
 
 ## Usage
-- Each folder contains the script to run in its corresponding operating system. 
+- Each folder contains the script to run in its corresponding operating system (the script inside `unix` should be compatible with Mac OS and most Linux distros). 
 - **Please edit the script and replace the source and destination folders.** You might be interested in modifying other parameters as well.
 - The scripts will create a **mirror** copy, i.e. destination folder will be changed to look exactly like source. 
 
