@@ -14,10 +14,11 @@ echo "Please verify the source and destination. Starting backup process in $wait
 
 sleep $waitTime
 
-for dir in $sourceDir/*/    # list directories in the form "/sourceDir/dirname/"
+# Use wildcard to list all subdirectories.
+for dir in $sourceDir/*/ 
 do
-    dir=${dir%*/}      # remove the trailing "/"
-    echo "Copying '$dir' to $destDir"
+    # Remove the trailing "/" so that the source subdir structure will be kept.
+    dir=${dir%*/}     echo "Copying '$dir' to $destDir"
     # TODO: add logging option to make it consistent with Windows version
     # TODO: look into multi-thread support
     rsync -av --delete "$dir" "$destDir"
