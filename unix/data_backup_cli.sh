@@ -3,7 +3,7 @@
 # Date: Feb 2021
 
 #TODO: replace
-sourceDir="/Volumes/REPLICA/REPLICA_1"
+sourceDir="/Volumes/REPLICA/REPLICA_1/DSH Music"
 destDir="/Users/dshieu/REPLICA_2"
 
 waitTime=3
@@ -24,14 +24,15 @@ loopy_rsync() {
         # Remove the trailing "/" so that the source subdir structure will be kept.
         dir=${dir%*/}
         # echo "Copying '$dir' to $destDir"
-        rsync -av --delete "$dir" "$destDir" >> backup_log_$log_date.txt
+        rsync -av --extended-attributes --delete "$dir" "$destDir" >> backup_log_$log_date.txt
     done
 }
 
 # GNU Parallel (https://www.gnu.org/software/parallel/)
 parallel_rsync_archive_mode() {
-    ls "$sourceDir" | parallel -v -j4  rsync -av --delete $sourceDir/{} $destDir > backup_log_$log_date.txt
+    ls "$sourceDir" | parallel -v -j4  rsync -avX --delete $sourceDir/{} $destDir > backup_log_$log_date.txt
 }
 
-loopy_rsync
+#loopy_rsync
 #parallel_rsync_archive_mode
+rsync -av --extended-attributes --delete "$sourceDir" "$destDir" 
