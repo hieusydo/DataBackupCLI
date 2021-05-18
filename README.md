@@ -14,3 +14,24 @@ The scripts are essentially calling these programs behind the scene:
 ## Future Works
 - [ ] Add user prompts asking for inputs and confirmation. 
 - [ ] Remote backup. 
+
+## Some benchmarks
+#### Parallel
+```
+unix git:(main) ✗ time ./data_backup_cli.sh
+Source is /Volumes/REPLICA/REPLICA_1
+Destination is /Users/dshieu/REPLICA_2
+Please verify the source and destination. Starting backup process in 3 seconds...
+Current timestamp 2021-05-17T233548
+./data_backup_cli.sh  1280.04s user 1597.83s system 22% cpu 3:34:23.77 total
+```
+
+#### Loop
+```
+➜  unix git:(main) ✗ time ./data_backup_cli.sh
+Source is /Volumes/REPLICA/REPLICA_1
+Destination is /Users/dshieu/REPLICA_2
+Please verify the source and destination. Starting backup process in 3 seconds...
+Current timestamp 2021-05-18T114743
+./data_backup_cli.sh  1177.24s user 1390.95s system 54% cpu 1:18:22.80 total
+```
